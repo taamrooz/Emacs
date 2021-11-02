@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import {Operation} from './operation';
+import { Operation } from './operation';
 
 var inMarkMode: boolean = false;
 var markHasMoved: boolean = false;
@@ -28,16 +28,25 @@ export function activate(context: vscode.ExtensionContext): void {
         context.subscriptions.push(registerCommand(commandName, op));
     });
 
+    const cursorMoveHandler = (arg: { to: "up" | "down", value: Number }) => {
+        const command = arg.to === "up" ? (inMarkMode ? "cursorUpSelect" : "cursorUp") : (inMarkMode ? "cursorDownSelect" : "cursorDown");
+        for (let i = 0; i < arg.value; ++i) {
+            vscode.commands.executeCommand(command);
+        }
+    };
+
+    context.subscriptions.push(vscode.commands.registerCommand('emacs.cursorMove', cursorMoveHandler));
+
     cursorMoves.forEach(element => {
         context.subscriptions.push(vscode.commands.registerCommand(
-            "emacs."+element, () => {
+            "emacs." + element, () => {
                 if (inMarkMode) {
-                    markHasMoved  = true;
+                    markHasMoved = true;
                 }
                 vscode.commands.executeCommand(
                     inMarkMode ?
-                    element+"Select" :
-                    element
+                        element + "Select" :
+                        element
                 );
             })
         )

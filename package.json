@@ -4,9 +4,9 @@
     "description": "Emacs emulation for Visual Studio Code",
     "icon": "images/icon.png",
     "version": "0.1.3",
-    "publisher": "vscodeemacs",
-    "homepage": "https://github.com/VSCodeEmacs/Emacs",
-    "repository": "VSCodeEmacs/Emacs",
+    "publisher": "taamrooz",
+    "homepage": "https://github.com/taamrooz/Emacs",
+    "repository": "https://github.com/taamrooz/Emacs",
     "bugs": "https://github.com/VSCodeEmacs/Emacs/issues",
     "license": "MIT",
     "engines": {
@@ -32,6 +32,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
+        "commands": [
+            {
+                "command": "emacs.cursorMove",
+                "title": "emacs.cursorMove"
+            }
+        ],
         "keybindings": [
             {
                 "key": "ctrl+x ctrl+c",
@@ -656,7 +662,7 @@
         "@types/mocha": "^2.2.41",
         "@types/node": "^6.0.81",
         "mocha": "^3.4.2",
-        "typescript": "^2.4.1",
+        "typescript": "^2.9.2",
         "vscode": "^1.1.4"
     },
     "dependencies": {
