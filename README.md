@@ -1,6 +1,7 @@
 <h2 align="center"><img src="https://github.com/VSCodeEmacs/Emacs/blob/master/images/icon.png?raw=true" height=123><br>VSCodeEmacs</h2>
 <p align="center"><strong>Emacs emulation for Visual Studio Code</strong></p>
 
+**This fork adds a command to move up and down by an amount of lines, similar in workings to the vscode cursorMove. The default vscode cursorMove doesn't account for emacs/this extensions way of marking, which is what this fork tries to accomplish.**
 This is a fork of... I don't remember the original extension name but there are tons of Emacs extensions and many of them claims to be Emacs-friendly but many fails to implement basic Emacs behaviors.
 To give you an example, in Emacs when you use `Ctrl+Space` to enter selection mode and then select some text, if you press `DEL` the text is removed and the selection mode is exited.
 No fork had this implemented, instead the text would get erased but the selection mode would still be operating, which was annoying for a real Emacs user I believe.

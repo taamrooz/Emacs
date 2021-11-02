@@ -3,7 +3,7 @@
     "displayName": "Emacs",
     "description": "Emacs emulation for Visual Studio Code",
     "icon": "images/icon.png",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "publisher": "taamrooz",
     "homepage": "https://github.com/taamrooz/Emacs",
     "repository": "https://github.com/taamrooz/Emacs",
